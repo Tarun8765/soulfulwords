@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 220 20% 15%;
+
+    --card: 40 30% 96%;
+    --card-foreground: 220 20% 15%;
+
+    --popover: 40 33% 98%;
+    --popover-foreground: 220 20% 15%;
+
+    --primary: 220 60% 35%;
+    --primary-foreground: 40 33% 98%;
+
+    --secondary: 30 30% 90%;
+    --secondary-foreground: 220 20% 20%;
+
+    --muted: 40 20% 92%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 25 40% 85%;
+    --accent-foreground: 220 20% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 220 60% 35%;
+
+    --radius: 0.75rem;
+
+    /* Custom design tokens */
+    --quote-bg: 40 35% 95%;
+    --quote-border: 220 60% 35%;
+    --category-motivation: 35 90% 55%;
+    --category-love: 350 70% 60%;
+    --category-life: 160 50% 45%;
+    --category-healing: 200 70% 55%;
+    --category-success: 45 95% 55%;
+    --category-wisdom: 260 50% 55%;
+
+    /* Typography */
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(220 20% 15% / 0.08);
+    --shadow-elevated: 0 8px 30px -6px hsl(220 20% 15% / 0.12);
+    --shadow-quote: 0 2px 15px -3px hsl(220 60% 35% / 0.15);
+  }
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 40 20% 95%;
+
+    --card: 220 18% 14%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 220 60% 60%;
+    --primary-foreground: 220 20% 10%;
+
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 40 20% 90%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 40 15% 60%;
+
+    --accent: 220 15% 22%;
+    --accent-foreground: 40 20% 95%;
+
+    --border: 220 15% 22%;
+    --input: 220 15% 22%;
+    --ring: 220 60% 60%;
+
+    --quote-bg: 220 18% 16%;
+    --quote-border: 220 60% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-medium tracking-tight;
+  }
+}
+
+@layer components {
+  .quote-text {
+    font-family: var(--font-display);
+    @apply text-2xl md:text-3xl lg:text-4xl leading-relaxed italic;
+  }
+
+  .quote-author {
+    font-family: var(--font-body);
+    @apply text-sm uppercase tracking-widest text-muted-foreground;
+  }
+
+  .blog-content {
+    font-family: var(--font-body);
+    @apply text-lg leading-relaxed;
+  }
+
+  .blog-content h2 {
+    @apply text-3xl mt-12 mb-6;
+  }
+
+  .blog-content p {
+    @apply mb-6;
+  }
+
+  .blog-content blockquote {
+    font-family: var(--font-display);
+    @apply italic text-xl border-l-4 border-primary pl-6 my-8 text-muted-foreground;
+  }
+
+  .category-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wider;
+  }
+
+  .category-motivation {
+    background-color: hsl(var(--category-motivation) / 0.15);
+    color: hsl(35 70% 35%);
+  }
+
+  .category-love {
+    background-color: hsl(var(--category-love) / 0.15);
+    color: hsl(350 60% 40%);
+  }
+
+  .category-life {
+    background-color: hsl(var(--category-life) / 0.15);
+    color: hsl(160 50% 30%);
+  }
+
+  .category-healing {
+    background-color: hsl(var(--category-healing) / 0.15);
+    color: hsl(200 60% 35%);
+  }
+
+  .category-success {
+    background-color: hsl(var(--category-success) / 0.15);
+    color: hsl(45 70% 35%);
+  }
+
+  .category-wisdom {
+    background-color: hsl(var(--category-wisdom) / 0.15);
+    color: hsl(260 45% 40%);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
