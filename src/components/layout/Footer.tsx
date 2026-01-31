@@ -4,7 +4,7 @@ import SocialLinks from "../../components/ui/socialLinks";
 export function Footer() {
   return (
     <footer className="border-t border-border/40 bg-card/50 mt-auto">
-      <div className="container py-8 sm:py-12 md:py-16">
+      <div className="container py-8 sm:py-10 md:py-10">
         {/* Mobile Layout - Centered stacked sections */}
         <div className="md:hidden text-center space-y-6">
           {/* Brand tagline */}
@@ -122,7 +122,7 @@ export function Footer() {
                 <Mail className="h-4 w-4" />
               </a>
             </div> */}
-            <SocialLinks />
+            <SocialLinks position={"justify-center"} />
           </div>
 
           {/* Copyright */}
@@ -147,6 +147,7 @@ export function Footer() {
                 write articles that inspire, heal, and guide you on your journey
                 through life.
               </p>
+              <SocialLinks position={"justify-start"} />
             </div>
 
             {/* Quick Links */}
@@ -196,7 +197,7 @@ export function Footer() {
           </div>
 
           {/* Bottom Bar */}
-          <div className="mt-12 pt-8 border-t border-border/40 flex items-center justify-between">
+          <div className="mt-6 pt-8 border-t border-border/40 flex items-center justify-center">
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} Soulful Words. Crafted with
               intention.
@@ -228,7 +229,6 @@ export function Footer() {
                 <Mail className="h-5 w-5" />
               </a>
             </div> */}
-            <SocialLinks />
           </div>
         </div>
       </div>
