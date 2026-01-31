@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
-import { Feather, Instagram, Twitter, Mail } from 'lucide-react';
-
+import { Link } from "react-router-dom";
+import { Feather, Instagram, Twitter, Mail } from "lucide-react";
+import SocialLinks from "../../components/ui/socialLinks";
 export function Footer() {
   return (
     <footer className="border-t border-border/40 bg-card/50 mt-auto">
@@ -14,64 +14,115 @@ export function Footer() {
 
           {/* Useful Links */}
           <div>
-            <h4 className="font-display font-medium text-sm mb-3">Useful Links</h4>
+            <h4 className="font-display font-medium text-sm mb-3">
+              Useful Links
+            </h4>
             <div className="flex flex-wrap justify-center gap-x-1 text-xs text-muted-foreground">
-              <Link to="/quotes" className="hover:text-primary transition-colors">Quotes</Link>
+              <Link
+                to="/quotes"
+                className="hover:text-primary transition-colors"
+              >
+                Quotes
+              </Link>
               <span>|</span>
-              <Link to="/blogs" className="hover:text-primary transition-colors">Blogs</Link>
+              <Link
+                to="/blogs"
+                className="hover:text-primary transition-colors"
+              >
+                Blogs
+              </Link>
               <span>|</span>
-              <Link to="/resources" className="hover:text-primary transition-colors">Resources</Link>
+              <Link
+                to="/resources"
+                className="hover:text-primary transition-colors"
+              >
+                Resources
+              </Link>
               <span>|</span>
-              <Link to="/about" className="hover:text-primary transition-colors">About</Link>
+              <Link
+                to="/about"
+                className="hover:text-primary transition-colors"
+              >
+                About
+              </Link>
             </div>
           </div>
 
           {/* Our Categories */}
           <div>
-            <h4 className="font-display font-medium text-sm mb-3">Our Categories</h4>
+            <h4 className="font-display font-medium text-sm mb-3">
+              Our Categories
+            </h4>
             <div className="flex flex-wrap justify-center gap-x-1 text-xs text-muted-foreground">
-              <Link to="/quotes?category=motivation" className="hover:text-primary transition-colors">Motivation</Link>
+              <Link
+                to="/quotes?category=motivation"
+                className="hover:text-primary transition-colors"
+              >
+                Motivation
+              </Link>
               <span>|</span>
-              <Link to="/quotes?category=love" className="hover:text-primary transition-colors">Love</Link>
+              <Link
+                to="/quotes?category=love"
+                className="hover:text-primary transition-colors"
+              >
+                Love
+              </Link>
               <span>|</span>
-              <Link to="/quotes?category=life" className="hover:text-primary transition-colors">Life</Link>
+              <Link
+                to="/quotes?category=life"
+                className="hover:text-primary transition-colors"
+              >
+                Life
+              </Link>
               <span>|</span>
-              <Link to="/quotes?category=wisdom" className="hover:text-primary transition-colors">Wisdom</Link>
+              <Link
+                to="/quotes?category=wisdom"
+                className="hover:text-primary transition-colors"
+              >
+                Wisdom
+              </Link>
             </div>
           </div>
 
           {/* Get in Touch */}
           <div>
-            <h4 className="font-display font-medium text-sm mb-3">Get in Touch</h4>
-            <p className="text-xs text-muted-foreground mb-2">Have a question or need guidance?</p>
-            <p className="text-xs text-muted-foreground mb-4">Our team is here to help you every step of the way.</p>
-            <div className="flex justify-center gap-4">
-              <a 
-                href="https://instagram.com" 
-                target="_blank" 
+            <h4 className="font-display font-medium text-sm mb-3">
+              Get in Touch
+            </h4>
+            <p className="text-xs text-muted-foreground mb-2">
+              Have a question or need guidance?
+            </p>
+            <p className="text-xs text-muted-foreground mb-4">
+              Our team is here to help you every step of the way.
+            </p>
+            {/* <div className="flex justify-center gap-4">
+              <a
+                href="https://instagram.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="h-4 w-4" />
               </a>
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
+              <a
+                href="https://twitter.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Twitter"
               >
                 <Twitter className="h-4 w-4" />
               </a>
-              <a 
+              <a
                 href="mailto:hello@soulfulwords.com"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Email"
               >
                 <Mail className="h-4 w-4" />
               </a>
-            </div>
+            </div> */}
+            <SocialLinks />
           </div>
 
           {/* Copyright */}
@@ -87,21 +138,26 @@ export function Footer() {
             <div className="col-span-2">
               <Link to="/" className="flex items-center gap-2 mb-4">
                 <Feather className="h-5 w-5 text-primary" />
-                <span className="font-display text-lg font-semibold">Soulful Words</span>
+                <span className="font-display text-lg font-semibold">
+                  Soulful Words
+                </span>
               </Link>
               <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
-                A digital sanctuary for meaningful words. We curate quotes and write articles 
-                that inspire, heal, and guide you on your journey through life.
+                A digital sanctuary for meaningful words. We curate quotes and
+                write articles that inspire, heal, and guide you on your journey
+                through life.
               </p>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h4 className="font-display font-medium mb-4 text-base">Explore</h4>
+              <h4 className="font-display font-medium mb-4 text-base">
+                Explore
+              </h4>
               <ul className="space-y-2">
-                {['Quotes', 'Blogs', 'About', 'Contact'].map((item) => (
+                {["Quotes", "Blogs", "About", "Contact"].map((item) => (
                   <li key={item}>
-                    <Link 
+                    <Link
                       to={`/${item.toLowerCase()}`}
                       className="text-sm text-muted-foreground hover:text-primary transition-colors"
                     >
@@ -114,11 +170,20 @@ export function Footer() {
 
             {/* Categories */}
             <div>
-              <h4 className="font-display font-medium mb-4 text-base">Categories</h4>
+              <h4 className="font-display font-medium mb-4 text-base">
+                Categories
+              </h4>
               <ul className="space-y-2">
-                {['Motivation', 'Love', 'Life', 'Healing', 'Success', 'Wisdom'].map((item) => (
+                {[
+                  "Motivation",
+                  "Love",
+                  "Life",
+                  "Healing",
+                  "Success",
+                  "Wisdom",
+                ].map((item) => (
                   <li key={item}>
-                    <Link 
+                    <Link
                       to={`/quotes?category=${item.toLowerCase()}`}
                       className="text-sm text-muted-foreground hover:text-primary transition-colors"
                     >
@@ -133,35 +198,37 @@ export function Footer() {
           {/* Bottom Bar */}
           <div className="mt-12 pt-8 border-t border-border/40 flex items-center justify-between">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Soulful Words. Crafted with intention.
+              © {new Date().getFullYear()} Soulful Words. Crafted with
+              intention.
             </p>
-            <div className="flex items-center gap-4">
-              <a 
-                href="https://instagram.com" 
-                target="_blank" 
+            {/* <div className="flex items-center gap-4">
+              <a
+                href="https://instagram.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
               </a>
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
+              <a
+                href="https://twitter.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Twitter"
               >
                 <Twitter className="h-5 w-5" />
               </a>
-              <a 
+              <a
                 href="mailto:hello@soulfulwords.com"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Email"
               >
                 <Mail className="h-5 w-5" />
               </a>
-            </div>
+            </div> */}
+            <SocialLinks />
           </div>
         </div>
       </div>
