@@ -11,7 +11,6 @@ export function Footer() {
           <p className="text-xs text-muted-foreground italic">
             — Designed to Match Your Routine and Mindset.
           </p>
-
           {/* Useful Links */}
           <div>
             <h4 className="font-display font-medium text-sm mb-3">
@@ -47,7 +46,6 @@ export function Footer() {
               </Link>
             </div>
           </div>
-
           {/* Our Categories */}
           <div>
             <h4 className="font-display font-medium text-sm mb-3">
@@ -83,7 +81,6 @@ export function Footer() {
               </Link>
             </div>
           </div>
-
           {/* Get in Touch */}
           <div>
             <h4 className="font-display font-medium text-sm mb-3">
@@ -95,39 +92,12 @@ export function Footer() {
             <p className="text-xs text-muted-foreground mb-4">
               Our team is here to help you every step of the way.
             </p>
-            {/* <div className="flex justify-center gap-4">
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-4 w-4" />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-4 w-4" />
-              </a>
-              <a
-                href="mailto:hello@soulfulwords.com"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Email"
-              >
-                <Mail className="h-4 w-4" />
-              </a>
-            </div> */}
+
             <SocialLinks position={"justify-center"} />
           </div>
-
-          {/* Copyright */}
-          <p className="text-xs text-muted-foreground pt-4 border-t border-border/40">
-            © {new Date().getFullYear()} Soulful Words. Crafted with intention.
+          <p className="text-sm text-muted-foreground">
+            Copyright © {new Date().getFullYear()} — All Rights Reserved By
+            SoulfulWords.in — Inspirational Quotes, Love, Motivation & Wisdom.
           </p>
         </div>
 
@@ -199,36 +169,9 @@ export function Footer() {
           {/* Bottom Bar */}
           <div className="mt-6 pt-8 border-t border-border/40 flex items-center justify-center">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Soulful Words. Crafted with
-              intention.
+              Copyright © {new Date().getFullYear()} — All Rights Reserved By
+              SoulfulWords.in — Inspirational Quotes, Love, Motivation & Wisdom.
             </p>
-            {/* <div className="flex items-center gap-4">
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a
-                href="mailto:hello@soulfulwords.com"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Email"
-              >
-                <Mail className="h-5 w-5" />
-              </a>
-            </div> */}
           </div>
         </div>
       </div>

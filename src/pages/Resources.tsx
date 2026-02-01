@@ -1,3 +1,4 @@
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Layout } from "../components/layout/Layout";
 import { books, references } from "../data/resources";
@@ -12,6 +13,15 @@ import {
 import { Card, CardContent } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
 import { Button } from "../components/ui/button";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "../components/ui/pagination";
+import { useIsMobile } from "../hooks/use-mobile";
 
 const typeIcons = {
   article: FileText,
@@ -21,6 +31,22 @@ const typeIcons = {
 };
 
 const Resources = () => {
+  const isMobile = useIsMobile();
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const booksPerPage = isMobile ? 4 : 9;
+  const totalPages = Math.ceil(books.length / booksPerPage);
+
+  const paginatedBooks = useMemo(() => {
+    const startIndex = (currentPage - 1) * booksPerPage;
+    return books.slice(startIndex, startIndex + booksPerPage);
+  }, [currentPage, booksPerPage]);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <Layout>
       <div className="container py-8 sm:py-12 md:py-16">
@@ -45,7 +71,7 @@ const Resources = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {books.map((book) => (
+            {paginatedBooks.map((book) => (
               <Link key={book.id} to={`/book/${book.id}`}>
                 <Card className="group overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer h-full">
                   <div className="aspect-[3/4] relative overflow-hidden">
@@ -76,6 +102,54 @@ const Resources = () => {
               </Link>
             ))}
           </div>
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <div className="mt-8">
+              <Pagination>
+                <PaginationContent>
+                  <PaginationItem>
+                    <PaginationPrevious
+                      onClick={() =>
+                        currentPage > 1 && handlePageChange(currentPage - 1)
+                      }
+                      className={
+                        currentPage === 1
+                          ? "pointer-events-none opacity-50"
+                          : "cursor-pointer"
+                      }
+                    />
+                  </PaginationItem>
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                    (page) => (
+                      <PaginationItem key={page}>
+                        <PaginationLink
+                          onClick={() => handlePageChange(page)}
+                          isActive={currentPage === page}
+                          className="cursor-pointer"
+                        >
+                          {page}
+                        </PaginationLink>
+                      </PaginationItem>
+                    ),
+                  )}
+                  <PaginationItem>
+                    <PaginationNext
+                      onClick={() =>
+                        currentPage < totalPages &&
+                        handlePageChange(currentPage + 1)
+                      }
+                      className={
+                        currentPage === totalPages
+                          ? "pointer-events-none opacity-50"
+                          : "cursor-pointer"
+                      }
+                    />
+                  </PaginationItem>
+                </PaginationContent>
+              </Pagination>
+            </div>
+          )}
         </section>
 
         {/* References Section */}
