@@ -16,6 +16,7 @@ function socialLinks({ position }) {
               height: "40px ",
               color: "hsl(var(--muted-foreground))",
             }}
+            target="blank"
             url={links.url}
           />
         );

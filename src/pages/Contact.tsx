@@ -4,8 +4,9 @@ import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
 import { Label } from "../components/ui/label";
-import { Mail, MessageSquare, Send, Instagram, Twitter } from "lucide-react";
+import { Mail, MessageSquare, Send } from "lucide-react";
 import { toast } from "sonner";
+import SocialLinks from "../components/ui/socialLinks";
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -126,10 +127,10 @@ const Contact = () => {
                       For general inquiries and collaborations
                     </p>
                     <a
-                      href="mailto:hello@soulfulwords.com"
+                      href="email:tarunghavri4@gmail.com"
                       className="text-primary hover:underline text-sm sm:text-base"
                     >
-                      hello@soulfulwords.com
+                      tarunghavri4@gmail.com
                     </a>
                   </div>
                 </div>
@@ -142,24 +143,7 @@ const Contact = () => {
                 <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4">
                   Join our community for daily inspiration
                 </p>
-                <div className="flex gap-2 sm:gap-3">
-                  <a
-                    href="https://instagram.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-muted flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
-                  >
-                    <Instagram className="h-4 w-4 sm:h-5 sm:w-5" />
-                  </a>
-                  <a
-                    href="https://twitter.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-muted flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
-                  >
-                    <Twitter className="h-4 w-4 sm:h-5 sm:w-5" />
-                  </a>
-                </div>
+                <SocialLinks position={"justify-start"} />
               </div>
 
               <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-muted/50 border border-border/50">
