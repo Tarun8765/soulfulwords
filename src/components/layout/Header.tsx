@@ -20,7 +20,8 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md">
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container flex h-16 items-center justify-between  md:justify-center ">
+        {/* Logo - Left */}
         <Link to="/" className="flex items-center gap-2 group">
           <Feather className="h-6 w-6 text-primary transition-transform group-hover:rotate-12" />
           <span className="font-display text-xl font-semibold tracking-tight">
@@ -29,7 +30,7 @@ export function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center justify-center gap-8  flex-1">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -47,9 +48,10 @@ export function Header() {
               )}
             </Link>
           ))}
-          <ThemeToggle />
         </nav>
-
+        <div className="hidden md:block">
+          <ThemeToggle />
+        </div>
         {/* Mobile Menu Button */}
         <div className="flex items-center gap-2 md:hidden">
           <ThemeToggle />
