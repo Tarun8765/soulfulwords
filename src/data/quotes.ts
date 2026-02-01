@@ -436,6 +436,12 @@ export const quotes: Quote[] = [
     author: "Doug Larson",
     category: "wisdom",
   },
+  {
+    id: "71",
+    text: "Actions speaks louder than words..",
+    author: "unknown",
+    category: "wisdom",
+  },
 ];
 
 export const categories: {
